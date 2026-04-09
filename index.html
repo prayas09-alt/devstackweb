@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevStack Hub | Tools & Developer Resources</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .ad-placeholder { background: #f8fafc; border: 2px dashed #cbd5e1; min-height: 90px; display: flex; align-items: center; justify-content: center; color: #94a3b8; margin: 20px 0; border-radius: 8px; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans leading-relaxed">
+
+    <nav class="bg-indigo-700 p-4 text-white shadow-xl sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-black tracking-tighter cursor-pointer" onclick="showSection('main')">DEVSTACK<span class="text-indigo-300">HUB</span></h1>
+            <ul class="flex space-x-5 text-sm font-medium">
+                <li><button onclick="showSection('main')" class="hover:text-indigo-200">Tools</button></li>
+                <li><button onclick="showSection('about')" class="hover:text-indigo-200">About</button></li>
+                <li><button onclick="showSection('privacy')" class="hover:text-indigo-200">Privacy</button></li>
+                <li><button onclick="showSection('contact')" class="hover:text-indigo-200">Contact</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 mt-4">
+        <div class="ad-placeholder text-xs">ADVERTISEMENT: Responsive Leaderboard</div>
+    </div>
+
+    <main id="section-main" class="container mx-auto px-4 py-8">
+        <section class="mb-12 text-center">
+            <h2 class="text-4xl font-extrabold text-slate-800 mb-4">Developer Utility Suite</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto">Fast, client-side tools for web developers and cybersecurity students. No data leaves your browser.</p>
+        </section>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-indigo-600">
+                    <span class="mr-2">🔒</span> Secure Key Generator
+                </h3>
+                <input type="text" id="passResult" readonly class="w-full p-3 bg-slate-50 rounded-lg mb-4 text-center font-mono border text-lg" placeholder="Waiting...">
+                <button onclick="generatePass()" class="w-full bg-indigo-600 text-white py-3 rounded-lg font-bold hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">Generate 16-Char Key</button>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-indigo-600">
+                    <span class="mr-2">📝</span> Case Converter
+                </h3>
+                <textarea id="textArea" class="w-full p-3 bg-slate-50 rounded-lg mb-4 h-28 border text-sm focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="Paste text to transform..."></textarea>
+                <div class="flex space-x-3">
+                    <button onclick="formatUpper()" class="flex-1 bg-slate-100 py-2 rounded font-semibold hover:bg-slate-200">UPPER</button>
+                    <button onclick="formatLower()" class="flex-1 bg-slate-100 py-2 rounded font-semibold hover:bg-slate-200">lower</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-placeholder text-xs my-8">ADVERTISEMENT: Native In-Article Ad</div>
+    </main>
+
+    <section id="section-about" class="container mx-auto px-4 py-12 hidden">
+        <div class="max-w-3xl mx-auto bg-white p-10 rounded-2xl shadow-sm">
+            <h2 class="text-3xl font-bold mb-6 border-b pb-4">About DevStack Hub</h2>
+            <p class="mb-4">Welcome to <strong>DevStack Hub</strong>, a specialized resource center designed for the modern developer and computer science student. Our mission is to provide high-speed, lightweight tools that simplify daily technical tasks.</p>
+            <p class="mb-4">Built with a focus on <strong>Cybersecurity and Full-Stack Development</strong>, we bridge the gap between theory (like Theory of Computation) and practical execution (like Secure Password Generation). Whether you are preparing for GSSoC or debugging a React component, our tools are here to help.</p>
+            <div class="bg-indigo-50 p-6 rounded-xl mt-6">
+                <h4 class="font-bold text-indigo-800">Why choose us?</h4>
+                <ul class="list-disc ml-5 mt-2 text-indigo-900 space-y-2">
+                    <li>100% Client-side processing: Your data never hits a server.</li>
+                    <li>Minimalist Design: No bloat, just speed.</li>
+                    <li>Open Resources: Curated cheatsheets for industry-standard frameworks.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-privacy" class="container mx-auto px-4 py-12 hidden">
+        <div class="max-w-3xl mx-auto bg-white p-10 rounded-2xl shadow-sm text-sm text-slate-700">
+            <h2 class="text-3xl font-bold mb-6 text-slate-900 border-b pb-4">Privacy Policy</h2>
+            <p class="mb-4 italic text-slate-500 text-xs">Last Updated: April 2026</p>
+            <p class="mb-4">At DevStack Hub, accessible from your domain, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by DevStack Hub and how we use it.</p>
+            
+            <h3 class="font-bold text-lg mt-6 mb-2 text-slate-900">1. Data Collection</h3>
+            <p class="mb-4">We do not collect personal identification information. Our tools (Password Generator, Text Converter) operate entirely within your browser's local environment using JavaScript. No text entered or generated is stored on our servers.</p>
+
+            <h3 class="font-bold text-lg mt-6 mb-2 text-slate-900">2. Google DoubleClick DART Cookie</h3>
+            <p class="mb-4">Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to our site and other sites on the internet.</p>
+
+            <h3 class="font-bold text-lg mt-6 mb-2 text-slate-900">3. Log Files</h3>
+            <p class="mb-4">DevStack Hub follows a standard procedure of using log files. These files log visitors when they visit websites. This is part of hosting services' analytics. The information collected includes IP addresses, browser type, and date/time stamps.</p>
+        </div>
+    </section>
+
+    <section id="section-contact" class="container mx-auto px-4 py-12 hidden">
+        <div class="max-w-xl mx-auto bg-white p-10 rounded-2xl shadow-sm text-center">
+            <h2 class="text-3xl font-bold mb-6 border-b pb-4">Contact Us</h2>
+            <p class="mb-8">Have a tool suggestion or found a bug? Reach out to our team.</p>
+            <div class="space-y-4">
+                <p class="font-medium text-indigo-600">Email: support@yourdomain.com</p>
+                <p class="text-slate-500">Response time: Within 24-48 hours</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 mt-20 border-t border-slate-800">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2 text-white font-bold">&copy; 2026 DevStack Hub</p>
+            <p class="text-xs">Providing free technical tools for the global developer community.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('main, section[id^="section-"]').forEach(s => s.classList.add('hidden'));
+            // Show target section
+            document.getElementById('section-' + sectionId).classList.remove('hidden');
+            // Scroll to top
+            window.scrollTo(0,0);
+        }
+
+        function generatePass() {
+            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+            let pass = "";
+            for (let i = 0; i < 16; i++) pass += chars.charAt(Math.floor(Math.random() * chars.length));
+            document.getElementById('passResult').value = pass;
+        }
+
+        function formatUpper() {
+            let area = document.getElementById('textArea');
+            area.value = area.value.toUpperCase();
+        }
+
+        function formatLower() {
+            let area = document.getElementById('textArea');
+            area.value = area.value.toLowerCase();
+        }
+    </script>
+</body>
+</html>
